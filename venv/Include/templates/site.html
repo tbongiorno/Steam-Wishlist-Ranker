@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="site.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+        <title>Steam Wishlist Ranker</title>
+    </head>
+    <style>
+        table, th, tr, td{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+    </style>
+
+    <body>
+        <nav>
+            <a href="page.html">Dev Log</a>
+        </nav>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name & Pic</th>
+                    <th>Overall Ranking</th>
+                    <th>Price</th>
+                    <th>All Time</th>
+                    <th>Recent</th>
+                    <th>Average</th>
+                    <th>Interest</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be inserted here using Jinja2 -->
+                {% for i in range(numRows) %}
+                <tr>
+                    <td>Row {{ i + 1 }} - Col 1</td>
+                    <td>Row {{ i + 1 }} - Col 2</td>
+                    <td>Row {{ i + 1 }} - Col 3</td>
+                    <td>Row {{ i + 1 }} - Col 4</td>
+                    <td>Row {{ i + 1 }} - Col 5</td>
+                    <td>Row {{ i + 1 }} - Col 6</td>
+                    <td>Row {{ i + 1 }} - Col 7</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
