@@ -1,12 +1,39 @@
 from flask import Flask, render_template
-#import datetime
+import requests
+import datetime
+
+STEAM_API_KEY = "my_api_key"
+STEAM_USER_ID = "76561199515048875"
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
+def get_game_data(game_id):
+    url=f"https://store.steampowered.com/api/appdetails?appids={game_id}"
+    response = requests.get(url)
+    game_data = response.json()
+
+    if game_data.get(str(game_id), {}).get('success'):
+        details = game_data[str(game_id)]['data']
+        return{
+            "name":details.get("name"),
+            "image":details.get("header_image"),
+            "price":details.get("price_overview", {}).get("final_formatted", "Not Availiable"),
+            "all_time_reviews":details.get("reviews", {}).get("total", "No Reviews"),
+            "recent_reviews":details.get("reviews", {}).get("recent", "No Recent Reviews"),
+        }
+    return None
+
+
 @app.route("/")
 def site():
     rows = 2
+    game_ids = [12345, 67890, 13579]
+    games = []
+    for game_id in game_ids:
+        game_data = get_game_data(game_id)
+        if game_data:
+            games.append(game_data)
     return render_template('site.html', numRows=rows)
 if __name__ == "__main__":
     app.run(debug=True)
@@ -16,8 +43,6 @@ if __name__ == "__main__":
 def page():
     date = datetime.date.today().strftime("%B %d, %Y")
     return render_template('page.html', date=date)
-
-
 
 #Define p, a, re, and ra
 def calc_score(p, a, re, ra):
@@ -64,5 +89,4 @@ def calc_rank(ranking, rank_total):
     elif rank > 65 and rank <= 80:
         return 1
     return 0'
-
 '''
