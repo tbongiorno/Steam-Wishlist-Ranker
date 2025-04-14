@@ -9,9 +9,14 @@ calc = Flask(__name__)
 calc.config['DEBUG'] = True
 
 
-@calc.route("/")
+@calc.route("/")                 
 def page():
-    '''
+    return render_template('page.html')
+
+if __name__ == "__main__":
+    calc.run(host="0.0.0.0", port=5000)
+
+'''
     game_1 = {
         "name": "Hades 2",
         "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/header.jpg?t=1741889622",
@@ -70,12 +75,11 @@ def page():
         print(f"No Wishlist Data Found")
     
     games = sort_games(wishlist)
-    '''
+    
 
     #date = datetime.date.today().strftime("%B %d, %Y")
     #date=date, games=games
-    return render_template('page.html')
-
+    '''
 '''
 def save_wishlist(wishlist):
     wishlist_data = []
