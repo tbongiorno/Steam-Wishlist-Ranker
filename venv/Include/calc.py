@@ -1,9 +1,9 @@
 from flask import Flask, render_template # type: ignore
 '''
 import requests
-import datetime
 import random
 '''
+import datetime
 
 calc = Flask(__name__)
 calc.config['DEBUG'] = True
@@ -11,10 +11,11 @@ calc.config['DEBUG'] = True
 
 @calc.route("/")                 
 def page():
-    return render_template('page.html')
-
+    date = datetime.date.today().strftime("%B %d, %Y")
+    return render_template('page.html', date=date)
 if __name__ == "__main__":
     calc.run(host="0.0.0.0", port=5000)
+
 
 '''
     game_1 = {
