@@ -9,6 +9,7 @@ calc.config['DEBUG'] = True
 
 @calc.route("/")
 def page():
+    '''
     game_1 = {
         "name": "Hades 2",
         "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/header.jpg?t=1741889622",
@@ -54,7 +55,7 @@ def page():
         "recent_reviews": 95
     }
     
-    '''
+    
     api_key = "29F8D86BEF0EE4C4675EDA733F43337A"
     user_id = "76561199515048875"
     wishlist = get_steam_wishlist(user_id, api_key)
@@ -69,7 +70,7 @@ def page():
     games = sort_games(wishlist)
     '''
 
-    date = datetime.date.today().strftime("%B %d, %Y")
+    #date = datetime.date.today().strftime("%B %d, %Y")
     #date=date, games=games
     return render_template('page.html')
 
