@@ -58,7 +58,7 @@ def page():
     api_key = "29F8D86BEF0EE4C4675EDA733F43337A"
     user_id = "76561199515048875"
     wishlist = get_steam_wishlist(user_id, api_key)
-    '''
+    
     wishlist = [game_1, game_2, game_3, game_4, game_5]
 
     if wishlist:
@@ -67,9 +67,13 @@ def page():
         print(f"No Wishlist Data Found")
     
     games = sort_games(wishlist)
-    date = datetime.date.today().strftime("%B %d, %Y")
-    return render_template('page.html', date=date, games=games)
+    '''
 
+    date = datetime.date.today().strftime("%B %d, %Y")
+    #date=date, games=games
+    return render_template('page.html')
+
+'''
 def save_wishlist(wishlist):
     wishlist_data = []
     for game in wishlist:
@@ -90,7 +94,7 @@ def save_wishlist(wishlist):
     return wishlist_data
 
 
-'''
+
 def get_game_details(game_id):
     
     url = f'https://store.steampowered.com/api/appdetails?appids={game_id}'
@@ -122,13 +126,13 @@ def get_steam_wishlist(user_id, api_key):
     else:
         print("Could not retrieve wishlist data.")
         return []
-'''
+
 
 def sort_games(games):
     for game in games:
         game['score'] = calc_price(game['price']) + calc_review(game['all_time_reviews'], game['recent_reviews']) + calc_interest(game['interest'], len(games))
     games = sorted(games, key=lambda x: (x['score']), reverse=True)
-    '''
+    
     n = len(games)
     for i in range(n):
         sorted = True
@@ -138,8 +142,6 @@ def sort_games(games):
                 sorted = False
         if sorted:
             break
-    '''
-    
     return games
     
 
@@ -183,3 +185,4 @@ def calc_interest(ranking, rank_total):
     elif rank >= 80 and rank <= 80:
         return 1
     return 0
+'''

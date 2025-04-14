@@ -40,33 +40,30 @@
         </nav>
         
         <br><br><br><br><br><br><br><br>
-        <table>
-            <thead>
+        <body>
+            <table width="100%">
                 <tr>
-                    <th>Name & Pic</th>
-                    <th>Overall Ranking</th>
+                    <th>Name</th>
+                    <th>Picture</th>
+                    <th>Overall Score</th>
                     <th>Price</th>
                     <th>All Time</th>
                     <th>Recent</th>
-                    <th>Average</th>
                     <th>Interest</th>
                 </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be inserted here using Jinja2 -->
-                {% for i in range(numRows) %}
+                {% for game in games %}
                 <tr>
-                    <td>Row {{ i + 1 }} - Col 1</td>
-                    <td>Row {{ i + 1 }} - Col 2</td>
-                    <td>Row {{ i + 1 }} - Col 3</td>
-                    <td>Row {{ i + 1 }} - Col 4</td>
-                    <td>Row {{ i + 1 }} - Col 5</td>
-                    <td>Row {{ i + 1 }} - Col 6</td>
-                    <td>Row {{ i + 1 }} - Col 7</td>
+        
+                    <th>{{ game.name }}</th>
+                    <th><a href="{{ game.image }}"><img src="{{ game.image }}" alt="Game Image"></a></th>
+                    <th>{{ game.score }}</th>
+                    <th>{{ game.price }}</th>
+                    <th>{{ game.all_time_reviews }}</th>
+                    <th>{{ game.recent_reviews }}</th>
+                    <th>{{ game.interest }}</th>
                 </tr>
                 {% endfor %}
-            </tbody>
-        </table>
-    </body>
+            </table>
+        </body>
     
 </html>

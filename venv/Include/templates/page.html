@@ -36,32 +36,6 @@
             padding: 5px;
         }
     </style>
-
-    <body>
-        <table width="100%" >
-            <tr>
-                <th>Name</th>
-                <th>Picture</th>
-                <th>Overall Score</th>
-                <th>Price</th>
-                <th>All Time</th>
-                <th>Recent</th>
-                <th>Interest</th>
-            </tr>
-            {% for game in games %}
-                <tr>
-                
-                    <th>{{ game.name }}</th>
-                    <th><a href="{{ game.image }}"><img src="{{ game.image }}" alt="Game Image"></a></th>
-                    <th>{{ game.score }}</th>
-                    <th>{{ game.price }}</th>
-                    <th>{{ game.all_time_reviews }}</th>
-                    <th>{{ game.recent_reviews }}</th>
-                    <th>{{ game.interest }}</th>
-                </tr>
-            {% endfor %}
-        </table>
-    </body>
     
     <article>
         <h1>Beginner Steam Wishlist Project Dev Updates</h1>
