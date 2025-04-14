@@ -1,7 +1,9 @@
 from flask import Flask, render_template
+'''
 import requests
 import datetime
 import random
+'''
 
 calc = Flask(__name__)
 calc.config['DEBUG'] = True
