@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-import requests
+#import requests
 #import random
 import datetime
     
@@ -23,7 +23,7 @@ def save_wishlist(wishlist):
     return wishlist_data
 
 
-
+'''
 def get_game_details(game_id):
     
     url = f'https://store.steampowered.com/api/appdetails?appids={game_id}'
@@ -42,7 +42,7 @@ def get_game_details(game_id):
         return game_details
     else:
         return None
-    
+ 
 
 def get_steam_wishlist(user_id, api_key):
     url = f'https://api.steampowered.com/ISteamUser/RequestUserStats/v1/?steamid={user_id}&key={api_key}'
@@ -55,7 +55,7 @@ def get_steam_wishlist(user_id, api_key):
     else:
         print("Could not retrieve wishlist data.")
         return []
-
+'''
 
 def sort_games(games):
     for game in games:
