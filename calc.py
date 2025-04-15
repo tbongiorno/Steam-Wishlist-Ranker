@@ -1,87 +1,8 @@
-from flask import Flask, render_template # type: ignore
-'''
+from flask import Flask, render_template, url_for
 import requests
-import random
-'''
+#import random
 import datetime
-
-calc = Flask(__name__)
-calc.config['DEBUG'] = True
-
-
-@calc.route("/")                 
-def page():
-    date = datetime.date.today().strftime("%B %d, %Y")
-    return render_template('page.html', date=date)
-if __name__ == "__main__":
-    calc.run(host="0.0.0.0", port=5000)
-
-
-'''
-    game_1 = {
-        "name": "Hades 2",
-        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/header.jpg?t=1741889622",
-        "interest": 1,
-        "price": 30.00,
-        "all_time_reviews": 94,
-        "recent_reviews": 95
-    }
-
-    game_2 = {
-        "name": "Signalis",
-        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1262350/header.jpg?t=1704064951",
-        "interest": 8,
-        "price": 20.00,
-        "all_time_reviews": 96,
-        "recent_reviews": 96
-    }
-
-    game_3 = {
-        "name": "Star of Providence",
-        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/603960/header.jpg?t=1740062273",
-        "interest": 18,
-        "price": 15.00,
-        "all_time_reviews": 96,
-        "recent_reviews": 93
-    }
-
-    game_4 = {
-        "name": "Cult of the Lamb",
-        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1313140/header.jpg?t=1741724183",
-        "interest": 27,
-        "price": 12.50,
-        "all_time_reviews": 95,
-        "recent_reviews": 96
-    }
-
-    game_5 = {
-        "name": "Devil May Cry V",
-        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/601150/header.jpg?t=1701395090",
-        "interest": 35,
-        "price": 7.50,
-        "all_time_reviews": 96,
-        "recent_reviews": 95
-    }
     
-    
-    api_key = "29F8D86BEF0EE4C4675EDA733F43337A"
-    user_id = "76561199515048875"
-    wishlist = get_steam_wishlist(user_id, api_key)
-    
-    wishlist = [game_1, game_2, game_3, game_4, game_5]
-
-    if wishlist:
-        games = save_wishlist(wishlist)
-    else:
-        print(f"No Wishlist Data Found")
-    
-    games = sort_games(wishlist)
-    
-
-    #date = datetime.date.today().strftime("%B %d, %Y")
-    #date=date, games=games
-    '''
-'''
 def save_wishlist(wishlist):
     wishlist_data = []
     for game in wishlist:
@@ -138,14 +59,13 @@ def get_steam_wishlist(user_id, api_key):
 
 def sort_games(games):
     for game in games:
-        game['score'] = calc_price(game['price']) + calc_review(game['all_time_reviews'], game['recent_reviews']) + calc_interest(game['interest'], len(games))
-    games = sorted(games, key=lambda x: (x['score']), reverse=True)
-    
+        game["score"] = calc_price(game["price"]) + calc_review(game["all_time_reviews"], game["recent_reviews"]) + calc_interest(game["interest"], len(games))
+        
     n = len(games)
     for i in range(n):
         sorted = True
         for j in range(n - i - 1):
-            if games[j]['score'] < games[j - 1]['score']:
+            if games[j]["score"] < games[j - 1]["score"]:
                 games[j], games[j + 1] = games[j + 1], games[j]
                 sorted = False
         if sorted:
@@ -193,4 +113,76 @@ def calc_interest(ranking, rank_total):
     elif rank >= 80 and rank <= 80:
         return 1
     return 0
-'''
+
+calc = Flask(__name__)
+calc.config['DEBUG'] = True
+
+
+@calc.route("/page")                 
+def page():
+    date = datetime.date.today().strftime("%B %d, %Y")
+    return render_template('page.html', date=date)
+
+if __name__ == "__main__":
+    calc.run(host="0.0.0.0", port=5000)
+
+@calc.route("/")                 
+def site():
+    game_1 = {
+        "name": "Hades 2",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/header.jpg?t=1741889622",
+        "interest": 1,
+        "price": 30.00,
+        "all_time_reviews": 94,
+        "recent_reviews": 95
+    }
+    game_2 = {
+        "name": "Signalis",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1262350/header.jpg?t=1704064951",
+        "interest": 8,
+        "price": 20.00,
+        "all_time_reviews": 96,
+        "recent_reviews": 96
+    }
+    game_3 = {
+        "name": "Star of Providence",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/603960/header.jpg?t=1740062273",
+        "interest": 18,
+        "price": 15.00,
+        "all_time_reviews": 96,
+        "recent_reviews": 93
+    }
+    game_4 = {
+        "name": "Cult of the Lamb",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1313140/header.jpg?t=1741724183",
+        "interest": 27,
+        "price": 12.50,
+        "all_time_reviews": 95,
+        "recent_reviews": 96
+    }
+    game_5 = {
+        "name": "Devil May Cry V",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/601150/header.jpg?t=1701395090",
+        "interest": 35,
+        "price": 7.50,
+        "all_time_reviews": 96,
+        "recent_reviews": 95
+    }
+    
+    #api_key = "29F8D86BEF0EE4C4675EDA733F43337A"
+    #user_id = "76561199515048875"
+    #wishlist = get_steam_wishlist(user_id, api_key)
+    
+    wishlist = [game_1, game_2, game_3, game_4, game_5]
+
+    if wishlist:
+        games = save_wishlist(wishlist)
+    else:
+        print(f"No Wishlist Data Found")
+    
+    games = sort_games(wishlist)
+
+    with calc.test_request_context():
+        url = url_for('site')
+
+    return render_template("site.html", games=games, url=url)
