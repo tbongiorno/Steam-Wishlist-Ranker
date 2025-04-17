@@ -182,7 +182,4 @@ def site():
     
     games = sort_games(wishlist)
 
-    with calc.test_request_context():
-        url = url_for('site')
-
-    return render_template("site.html", games=games, url=url)
+    return render_template("site.html", games=games)

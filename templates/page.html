@@ -5,224 +5,244 @@
         <meta name="Viewport" content="width=device-width, initial-scale=1.0">
         <title>Beginner Steam Wishlist Project</title>
     </head>
-    
-    <style>
-        :is(h1, h2, h3) {
-            text-align: center;
-            line-height: 0.2;
-        }
-
-        :is(h4, h5, h6){
-            text-align:left;
-            line-height:0;
-        }
-
-        p {
-            line-height:1.3;
-        }
-        a.button{
-            padding: 1px 6px;
-            border: 1px outset buttonborder;
-            border-radius: 3px;
-            color: rgb(139, 22, 22);
-            background-color: rgb(40, 184, 224);
-            text-decoration: none;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        table, th, tr, td{
-            border: 2px solid black;
-            border-collapse: collapse;
-            padding: 5px;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <body>
+        <div>
+            <a href="site.html" class="button">Switch <br>Pages</a>
+        </div>
+    </body>
     <article>
         <h1>Beginner Steam Wishlist Project Dev Updates</h1>
         <h2>By: Thomas Bongiorno</h2>
         <h2> {{ date }} </h2> 
-        <div>
-            <a href="site.html" class="button">Steam Wishlist Ranker</a>
-        </div>
         
+        <h4>
+            Purpose
+        </h4>
+        <p class="purpose">
+            If you've navigated to this page, then you will soon be reading my dev logs for each day I've 
+            been working on this project. This is the first non-school related project I've ever worked on 
+            so I wanted to create a way for me to keep track of my progress, so I came up with this. I decided
+            to make these logs public to anyone who views this project as a way to show how programming is not
+            very simple. As of writing, I haven't completed this project yet but there has been many (way too many)
+            setbacks in the development process. Whether that be through writing faulty code or buying a 
+            domain that doesn't work with this project, I've gone through some hardships. But even now, I'm learning
+            new things, and I tried my best to convey that at the end of each programming session. </p>
         
-
-        <div class="day1">
-            <h4>3/23/25</h4>
-            <p>Today is my first day creating this project. I am very nervous because I am not sure if I understand what I am doing
-                and
-                 I want to finish this as quickly as possible. Either way, I'm excited to start working and make some progress each
-                day
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li>Stuff Done Before: <ul>
-                    <li>Created Project Plan</li>
-                    <li>Basic Tech Stack</li>
-                </li>
+        <br>
+        <div class="days">
+            <div class="day">
+                <h4>3/23/25</h4>
+                <p>Today is my first day creating this project. I am very nervous because I am not sure if I understand what I am doing
+                    and
+                    I want to finish this as quickly as possible. Either way, I'm excited to start working and make some progress each
+                    day
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Stuff Done Before: <ul>
+                        <li>Created Project Plan</li>
+                        <li>Basic Tech Stack</li>
+                    </li>
+                    </ul>
+                    <li>Created HTML, Python, and CSS files</li>
+                    <li>Connected Flask to this project</li>
                 </ul>
-                <li>Created HTML, Python, and CSS files</li>
-                <li>Connected Flask to this project</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Implement Calculation Methods in Python File</li>
-                <li>Implement CSS and HTML files for site</li>
-               <li>Learn more about Steam Web API</li>
-            </ul>
-            <br>
-        </div>
-        
-        <div class="day2">
-            <h4>3/26/25</h4>
-            <p>Today don't have much time to work on the project, so I am going to try to
-                just add a little to the site.html and site.css files and make a workable output
-                with my flask file
-            </p>
-            <h5>Accomplishments Today</h5>
-            <li>Added to site.html and site.css</li>
-            <li>Reorganized Project structure</li>
-            <li>Added basic score calculation functions in app.py</li>
-            <li>Installed Jinja2 to add more functionality to html files by
-                sending them a varible from my python file</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Implement Calculation Methods in Python File</li>
+                    <li>Implement CSS and HTML files for site</li>
                 <li>Learn more about Steam Web API</li>
-                <li>Add basic steam user info to html page (doesn't have to function)</li>
-            </ul>
-        </div>
+                </ul>
+            </div>
 
-        <div class="day3">
-            <h4>3/27/25</h4>
-            <p>Today I learned that I might not be able to just grab the wishlist data from
-                users as easily as I wanted to. I originally thought the base Steam Web API's would allow it
-                but with more research I have to go to alternate API's for this use case. Other than that, I 
-                set up a connection between this project and github, created a place to deploy the project with 
-                a domain, and set up a basic connection between site.html and page.html.
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li>Connection to GitHub</li>
-                <li>Connection to Netlify (deploy and domain)</li>
-                <li>Basic html file connection</li>
-                <li>Learned more about Steam Web API uses and put it on my google doc</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Make sure domain is fully prepared and working</li>
-                <li>Get basic Steam Web API to work</li>
-                <li>Make connection between html files more complicated (button with fun formatting)</li>
-            </ul>
-        </div>
-        
-        <div class="day4">
-            <h4>3/29/25</h4>
-            <p>I don't have a lot of time to work on this project today but I want to work towards
-                accomplishing the goals I set last time. I likely won't finish these goals today 
-                but I'll at least put a debt in them.
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li>Set up code for getting game data</li>
-                <li>Added Buttons to each html page</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Get Steam Web API Key</li>
-                <li>Completely set up Python file and methods</li>
-                <li>Make sure Steam Web API stuff works</li>
-                <li>Get Netlify domain to work</li>
-            </ul>
-        </div>
+            <br>
+            
+            <div class="day">
+                <h4>3/26/25</h4>
+                <p>Today don't have much time to work on the project, so I am going to try to
+                    just add a little to the site.html and site.css files and make a workable output
+                    with my flask file
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Added to site.html and site.css</li>
+                    <li>Reorganized Project structure</li>
+                    <li>Added basic score calculation functions in app.py</li>
+                    <li>Installed Jinja2 to add more functionality to html files by sending them a varible from my python file</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Learn more about Steam Web API</li>
+                    <li>Add basic steam user info to html page (doesn't have to function)</li>
+                </ul>
+            </div>
 
-        <div class="day5">
-            <h4>4/04/25</h4>
-            <p>I spent a lot of time procrastinating on this project because I felt
-                really dumb for not knowing absolutely everything I was doing. I've 
-                recently realized that no one in CS truly knows what they are doing 
-                so it is ok for me to not completely know, and its even better for me 
-                to learn new things while developing this project (which was my original
-                intention). Going forward, I will make it a point to at least so something
-                with this project everyday, even if its something super basic. Since I'm 
-                using things I'm learning on the fly (flask, jinja2, steam web api, api's
-                in general, etc), it would be very beneficial for me to work with these 
-                systems everyday so the new concpets I learn don't disapear. With that 
-                rant done, I want to say that I am feeling more confident with this project
-                now. I am understanding Jinja2 and Flask and am using what I know to build
-                the project. I still have a lot to do but I'm happy with the progress, I just
-                need to continue working everyday.
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li>Set up Python Code for sorting list of games</li>
-                <li>Set up Python/HTML code (Jinja2) to output each game from a list of games and its data</li>
-                <li>Acquired a Steam Web API key</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Consider a good use for the buttons</li>
-                <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
-                <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
-            </ul>
-        </div>
+            <br>
 
-        <div class="day6">
-            <h4>4/07/25</h4>
-            <p>I'm finding this latest stretch of the project to be most difficult. What I'm 
-                trying to do now is connect this python file to my steam account but that is 
-                producing an error when running the file. Also the netlify domain isn't 
-                working at all so I have to fix that as well. The good news is I updated the 
-                code to work with the steam input and I have an idea for the buttons. On the initial
-                publishing of the site, the buttons on each html page will connect them to each other,
-                allowing users of the site to see these docs. Later on however, I plan to make it so when a 
-                user hits the button, they are allowed to enter their steam id so the program 
-                will work for them. But that functionality will come later.
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li>Updated python code</li>
-                <li>Came up with button idea</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
-                <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
-                <li>Get Netlify to work (or find another means of publishing)</li>
-            </ul>
-        </div>
+            <div class="day">
+                <h4>3/27/25</h4>
+                <p>Today I learned that I might not be able to just grab the wishlist data from
+                    users as easily as I wanted to. I originally thought the base Steam Web API's would allow it
+                    but with more research I have to go to alternate API's for this use case. Other than that, I 
+                    set up a connection between this project and github, created a place to deploy the project with 
+                    a domain, and set up a basic connection between site.html and page.html.
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Connection to GitHub</li>
+                    <li>Connection to Netlify (deploy and domain)</li>
+                    <li>Basic html file connection</li>
+                    <li>Learned more about Steam Web API uses and put it on my google doc</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Make sure domain is fully prepared and working</li>
+                    <li>Get basic Steam Web API to work</li>
+                    <li>Make connection between html files more complicated (button with fun formatting)</li>
+                </ul>
+            </div>
+            
+            <br>
 
-        <div class="day7">
-            <h4>4/14/25</h4>
-            <p>I am struggling a lot with this project currently. I found out that my Netlify domain wasn't working because NEtlify doesn't support this type of project
-                so I changed my code, created an account on render, and am trying to get a deploy working for a basic version of the program. It isn't working as of writing 
-                but I will try to make it work soon. EDIT, I got it to work. Now I can spend the next few days getting the STEAM API connection to work.
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li>SWitched to Render</li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
-                <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
-            </ul>
-        </div>
+            <div class="day">
+                <h4>3/29/25</h4>
+                <p>I don't have a lot of time to work on this project today but I want to work towards
+                    accomplishing the goals I set last time. I likely won't finish these goals today 
+                    but I'll at least put a debt in them.
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Set up code for getting game data</li>
+                    <li>Added Buttons to each html page</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Get Steam Web API Key</li>
+                    <li>Completely set up Python file and methods</li>
+                    <li>Make sure Steam Web API stuff works</li>
+                    <li>Get Netlify domain to work</li>
+                </ul>
+            </div>
 
-        <div class="day8">
-            <h4>4/15/25</h4>
-            <p> I didn't have a lot of time today because I have an upcoming Chemistry test,
-                but I fiddled a bit with the output and alternating between pages
-            </p>
-            <h5>Accomplishments Today</h5>
-            <ul>
-                <li></li>
-            </ul>
-            <h5>Goals for Next Time</h5>
-            <ul>
-                <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
-                <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
-                <li>Change Steam Web API Domain stuff</li>
-            </ul>
+            <br>
+
+            <div class="day">
+                <h4>4/04/25</h4>
+                <p>I spent a lot of time procrastinating on this project because I felt
+                    really dumb for not knowing absolutely everything I was doing. I've 
+                    recently realized that no one in CS truly knows what they are doing 
+                    so it is ok for me to not completely know, and its even better for me 
+                    to learn new things while developing this project (which was my original
+                    intention). Going forward, I will make it a point to at least so something
+                    with this project everyday, even if its something super basic. Since I'm 
+                    using things I'm learning on the fly (flask, jinja2, steam web api, api's
+                    in general, etc), it would be very beneficial for me to work with these 
+                    systems everyday so the new concpets I learn don't disapear. With that 
+                    rant done, I want to say that I am feeling more confident with this project
+                    now. I am understanding Jinja2 and Flask and am using what I know to build
+                    the project. I still have a lot to do but I'm happy with the progress, I just
+                    need to continue working everyday.
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Set up Python Code for sorting list of games</li>
+                    <li>Set up Python/HTML code (Jinja2) to output each game from a list of games and its data</li>
+                    <li>Acquired a Steam Web API key</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Consider a good use for the buttons</li>
+                    <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
+                    <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="day">
+                <h4>4/07/25</h4>
+                <p>I'm finding this latest stretch of the project to be most difficult. What I'm 
+                    trying to do now is connect this python file to my steam account but that is 
+                    producing an error when running the file. Also the netlify domain isn't 
+                    working at all so I have to fix that as well. The good news is I updated the 
+                    code to work with the steam input and I have an idea for the buttons. On the initial
+                    publishing of the site, the buttons on each html page will connect them to each other,
+                    allowing users of the site to see these docs. Later on however, I plan to make it so when a 
+                    user hits the button, they are allowed to enter their steam id so the program 
+                    will work for them. But that functionality will come later.
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Updated python code</li>
+                    <li>Came up with button idea</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
+                    <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
+                    <li>Get Netlify to work (or find another means of publishing)</li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="day">
+                <h4>4/14/25</h4>
+                <p>I am struggling a lot with this project currently. I found out that my Netlify domain wasn't working because NEtlify doesn't support this type of project
+                    so I changed my code, created an account on render, and am trying to get a deploy working for a basic version of the program. It isn't working as of writing 
+                    but I will try to make it work soon. EDIT, I got it to work. Now I can spend the next few days getting the STEAM API connection to work.
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>SWitched to Render</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
+                    <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="day">
+                <h4>4/15/25</h4>
+                <p> I didn't have a lot of time today because I have an upcoming Chemistry test,
+                    but I fiddled a bit with the output and alternating between pages
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li></li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
+                    <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
+                    <li>Change Steam Web API Domain stuff</li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="day">
+                <h4>4/17/25</h4>
+                <p> I didn't spend a lot of time on the code, mostly just changed some stuff about the UI/UX. Firstly, I added a 
+                    css file and transfered all of my style settings from both python files into it and sorted it so it was much 
+                    easier to parse through. I also changed the colors and layouts of some stuff to look and function better.
+                </p>
+                <h5>Accomplishments Today</h5>
+                <ul>
+                    <li>Added some pezzaz to the User Interface</li>
+                </ul>
+                <h5>Goals for Next Time</h5>
+                <ul>
+                    <li>Get both of my HTMl pages to function together with button(temporarily, will change buttons use later)</li>
+                    <li>Use Steam Web API to collect Wishlisted Games (used made up games list for testing)</li>
+                    <li>Change Steam Web API Domain stuff</li>
+                    <li>Finish Basic User Interface</li>
+                </ul>
+            </div>
         </div>
     </article>
 
