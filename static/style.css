@@ -37,7 +37,7 @@ h4{
 
 p {
     line-height: 1.3;
-    color: rgb(199, 213, 224);
+    color: rgb(102, 192, 244)
 }
 
 .purpose{
@@ -46,7 +46,7 @@ p {
 }
 
 /* DAYS STUFF */
-.days{
+#days{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -54,37 +54,24 @@ p {
 }
 
 .day{
-    background-color: blue;
     border:5px solid red;
     border-radius: 15px;
     display: block;
     padding: 5px;
-    box-sizing: border-box;
+    box-sizing:content-box;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
 }
 
-/* MAKE 2 BOXES PER ROW 
 .day:nth-child(odd) {
-    margin-left: 55%;
-    margin-right: 0%;
-    background-color: yellow;
+    background-color: blue;
 }
 
 .day:nth-child(even) {
-    margin-left: 0%;
-    margin-right: 55%;
-    background-color: red;
+    background-color: chocolate;
 }
-*/
 
 .day p{
-    background-color: blue;
-}
-
-.day li{
-    background-color: blue;
+    color: rgb(199, 213, 224);
 }
 
 /* LIST STUFF */
