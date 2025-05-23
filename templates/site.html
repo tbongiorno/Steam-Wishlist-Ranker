@@ -16,23 +16,25 @@
             <table width="100%" border-style="solid">
                 <tr>
                     <th>Name</th>
-                    <th>Picture</th>
-                    <th>Overall Score</th>
+                    <th>Image</th>
+                    <th>Score</th>
                     <th>Price</th>
-                    <th>All Time</th>
-                    <th>Recent</th>
+                    <th>On Sale</th>
+                    <th>Reviews</th>
                     <th>Interest</th>
                 </tr>
                 {% for game in games %}
                 <tr>
-        
+                <!-- 
+                    Change Following code to work with new code
                     <th>{{ game.name }}</th>
                     <th><a href="{{ game.image }}"><img src="{{ game.image }}" alt="Game Image"></a></th>
                     <th>{{ game.score }}</th>
                     <th>{{ game.price }}</th>
                     <th>{{ game.all_time_reviews }}</th>
                     <th>{{ game.recent_reviews }}</th>
-                    <th>{{ game.interest }}</th>
+                    <th>{{ game.interest }}</th> 
+                -->
                 </tr>
                 {% endfor %}
             </table>

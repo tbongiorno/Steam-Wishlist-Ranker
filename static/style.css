@@ -62,13 +62,14 @@ p {
     width: 100%;
 }
 
-.day:nth-child(odd) {
-    background-color: blue;
+/* .day:nth-child(odd) {
+    
 }
 
+
 .day:nth-child(even) {
-    background-color: chocolate;
-}
+    
+} */
 
 .day p{
     color: rgb(199, 213, 224);
